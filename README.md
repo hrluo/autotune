@@ -7,8 +7,14 @@ From source:
 ```bash
 git clone https://github.com/ytopt-team/autotune.git
 cd autotune/
+git reset --hard $(git rev-list -1 $(git rev-parse --until=2019-07-09) master)
 pip install -e .
 ```
+hrluo: The autotune package has changed drastically since its first init, use git to set its head at 2019-07-09, which is its first commit. The basic example provided [here](https://github.com/ytopt-team/autotune) will only runs with certain version of auto tune, so does GPTune.
+
+[Ref: How to clone the repo at a specific date?](https://stackoverflow.com/questions/3790671/how-to-in-git-clone-a-remote-github-repository-from-a-specifed-date)
+Note that you may also want to use following commands:
+>python setup.py install --user
 
 From source with documentation and doctest requirements:
 
